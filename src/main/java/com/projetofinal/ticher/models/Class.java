@@ -1,4 +1,6 @@
-package com.projetofinal.ticher.domain;
+package com.projetofinal.ticher.models;
+
+import com.projetofinal.ticher.models.enums.StatusClassEnum;
 
 import javax.persistence.*;
 import java.time.Instant;

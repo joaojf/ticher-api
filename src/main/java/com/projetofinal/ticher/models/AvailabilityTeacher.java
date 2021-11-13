@@ -1,9 +1,11 @@
-package com.projetofinal.ticher.domain;
+package com.projetofinal.ticher.models;
+
+import com.projetofinal.ticher.models.abstracts.SchedulingClass;
 
 import javax.persistence.*;
 
 @Entity
-public class AvailabilityTeacher extends  SchedulingClass{
+public class AvailabilityTeacher extends SchedulingClass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

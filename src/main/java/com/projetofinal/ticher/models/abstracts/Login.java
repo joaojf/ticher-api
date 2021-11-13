@@ -1,4 +1,4 @@
-package com.projetofinal.ticher.domain;
+package com.projetofinal.ticher.models.abstracts;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -7,9 +7,9 @@ import javax.persistence.MappedSuperclass;
 public abstract class Login {
 
     @Column(nullable = false, unique = true)
-    private String email;
+    protected String email;
 
     @Column(nullable = false)
-    private String password;
+    protected String password;
 
 }

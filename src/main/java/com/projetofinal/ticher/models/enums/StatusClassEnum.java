@@ -1,4 +1,4 @@
-package com.projetofinal.ticher.domain;
+package com.projetofinal.ticher.models.enums;
 
 public enum StatusClassEnum {
 
