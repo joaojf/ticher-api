@@ -13,7 +13,7 @@ public class Class {
     private Long id;
 
     @Column(nullable = false)
-    private Double valor;
+    private Double price;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
