@@ -5,7 +5,7 @@ import com.projetofinal.ticher.models.abstracts.SchedulingClass;
 import javax.persistence.*;
 
 @Entity
-public class AvailabilityTeacher extends SchedulingClass {
+public class TeacherAvailability extends SchedulingClass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class AvailabilityTeacher extends SchedulingClass {
     private Teacher teachers;
 
     @Deprecated
-    private AvailabilityTeacher() {
+    private TeacherAvailability() {
     }
 
 }

@@ -20,7 +20,7 @@ public class Class {
     private StatusClassEnum statusClass;
 
     @OneToOne
-    private AvailabilityTeacher availabilityTeacher;
+    private TeacherAvailability teacherAvailability;
 
     @OneToOne
     private StudentScheduling agendamento;
