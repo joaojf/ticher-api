@@ -2,12 +2,8 @@ package com.projetofinal.ticher.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.projetofinal.ticher.models.Teacher;
-import com.sun.istack.NotNull;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.*;
 import java.util.List;
 
 public class TeacherRequest {

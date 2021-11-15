@@ -4,6 +4,7 @@ import com.projetofinal.ticher.models.abstracts.SchedulingClass;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.time.LocalDate;
 
 @Entity
 public class TeacherAvailability extends SchedulingClass {
@@ -20,6 +21,12 @@ public class TeacherAvailability extends SchedulingClass {
 
     @Deprecated
     private TeacherAvailability() {
+    }
+
+    public TeacherAvailability(LocalDate date, String hours, Teacher teachers) {
+        super.date = date;
+        super.hours = hours;
+        this.teachers = teachers;
     }
 
 }

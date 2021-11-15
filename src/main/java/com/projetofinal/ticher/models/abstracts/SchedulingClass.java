@@ -6,11 +6,10 @@ import java.time.LocalDate;
 
 @MappedSuperclass
 public abstract class SchedulingClass {
-    // add regex
+
     @Column(nullable = false)
     protected LocalDate date;
 
-    // add regex
     @Column(nullable = false)
     protected String hours;
 

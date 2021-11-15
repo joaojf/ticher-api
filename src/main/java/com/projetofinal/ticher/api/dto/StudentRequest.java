@@ -2,17 +2,8 @@ package com.projetofinal.ticher.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.projetofinal.ticher.models.Student;
-import com.sun.istack.NotNull;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import java.time.Instant;
+import javax.validation.constraints.*;
 
 public class StudentRequest {
 
