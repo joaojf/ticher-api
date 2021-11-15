@@ -21,4 +21,10 @@ public class Student extends Login {
     @Deprecated
     private Student() {}
 
+    public Student(String name, String email, String password) {
+        this.name = name;
+        super.email = email;
+        super.password = password;
+    }
+
 }
