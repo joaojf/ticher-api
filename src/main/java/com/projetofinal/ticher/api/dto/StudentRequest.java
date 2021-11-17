@@ -7,21 +7,16 @@ import javax.validation.constraints.*;
 
 public class StudentRequest {
 
-    @NotNull
     @NotBlank
-    @Min(2)
-    @Max(150)
+    @Size(min=2, max=200)
     private final String name;
 
-    @NotNull
     @NotBlank
     @Email
     private final String email;
 
-    @NotNull
     @NotBlank
-    @Min(4)
-    @Max(150)
+    @Size(min=4)
     private final String password;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)

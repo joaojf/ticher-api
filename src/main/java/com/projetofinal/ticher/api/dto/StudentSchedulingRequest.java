@@ -2,15 +2,14 @@ package com.projetofinal.ticher.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.projetofinal.ticher.models.Teacher;
-import com.projetofinal.ticher.models.TeacherAvailability;
-import com.projetofinal.ticher.repositories.TeacherRepository;
+import com.projetofinal.ticher.models.Student;
+import com.projetofinal.ticher.models.StudentScheduling;
+import com.projetofinal.ticher.repositories.StudentRepository;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-public class TeacherAvailabilityRequest {
-
+public class StudentSchedulingRequest {
     @Future
     @NotNull
     @JsonFormat(pattern = "dd/MM/yyyy")
@@ -22,18 +21,16 @@ public class TeacherAvailabilityRequest {
     private final String hours;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public TeacherAvailabilityRequest(LocalDate date, String hours) {
+    public StudentSchedulingRequest(LocalDate date, String hours) {
         this.date = date;
         this.hours = hours;
     }
 
-    public TeacherAvailability toTeacherAvailability(Long idTeacher, TeacherRepository teacherRepository){
 
-        Teacher teacher = teacherRepository
-                .findById(idTeacher)
+    public StudentScheduling toStudentScheduling(Long idStudent, StudentRepository studentRepository) {
+        Student student = studentRepository
+                .findById(idStudent)
                 .orElseThrow(() ->  new RuntimeException("teacher not found!"));
-
-        return new TeacherAvailability(this.date, this.hours, teacher);
+        return new StudentScheduling(this.date, this.hours, student);
     }
-
 }
