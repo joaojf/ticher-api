@@ -7,7 +7,9 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Entity
@@ -20,8 +22,11 @@ public class Teacher extends Login {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teachers",cascade = CascadeType.PERSIST)
-    private final List<Subject> subjects = new ArrayList<>();
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teachers", cascade = CascadeType.PERSIST)
+    private final Set<Subject> subjects = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teachers")
+    private final List<Evaluation> evaluations = new ArrayList<>();
 
     @Column(nullable = false, updatable = false)
     private final Instant createdIn = Instant.now();
@@ -30,7 +35,7 @@ public class Teacher extends Login {
     private Teacher() {
     }
 
-    public Teacher(String name, @Valid List<SubjectRequest> subjectsList, String email, String password) {
+    public Teacher(String name, @Valid Set<SubjectRequest> subjectsList, String email, String password) {
         super.email = email;
         super.password = password;
         this.name = name;
@@ -40,14 +45,14 @@ public class Teacher extends Login {
                 // o método pra transformar request em entity
                 .map(subjectRequest -> subjectRequest.toSubject(this))
                 // por fim joga as entity pra dentro da lista
-                .collect(Collectors.toList()));
+                .collect(Collectors.toSet()));
     }
 
     public String getName() {
         return name;
     }
 
-    public List<Subject> getSubjects() {
+    public Set<Subject> getSubjects() {
         return subjects;
     }
 
