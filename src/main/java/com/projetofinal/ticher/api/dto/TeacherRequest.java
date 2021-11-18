@@ -5,6 +5,7 @@ import com.projetofinal.ticher.models.Teacher;
 
 import javax.validation.constraints.*;
 import java.util.List;
+import java.util.Set;
 
 public class TeacherRequest {
 
@@ -21,10 +22,10 @@ public class TeacherRequest {
     @Size(min=4)
     private final String password;
 
-    private final List<SubjectRequest> subjects;
+    private final Set<SubjectRequest> subjects;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public TeacherRequest(String name, String email, String password, List<SubjectRequest> subjects) {
+    public TeacherRequest(String name, String email, String password, Set<SubjectRequest> subjects) {
         this.name = name;
         this.email = email;
         this.password = password;

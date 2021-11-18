@@ -30,7 +30,6 @@ public class CreateTeacherController {
     @PostMapping
     @Transactional
     public ResponseEntity<?> create(@RequestBody @Valid TeacherRequest request){
-
         log.info("[create.param.request] " + request.toString());
 
         Teacher teacher =  request.toTeacher();

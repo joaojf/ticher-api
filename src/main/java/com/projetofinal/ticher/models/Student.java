@@ -4,6 +4,8 @@ import com.projetofinal.ticher.models.abstracts.Login;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Student extends Login {
