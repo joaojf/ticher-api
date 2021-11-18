@@ -1,20 +1,24 @@
 package com.projetofinal.ticher.models;
 
-import com.projetofinal.ticher.models.abstracts.SchedulingClass;
-
 import javax.persistence.*;
 import java.time.Instant;
 import java.time.LocalDate;
 
 @Entity
-public class TeacherAvailability extends SchedulingClass {
+public class TeacherAvailability {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
+    private LocalDate date;
+
+    @Column(nullable = false)
+    private String hours;
+
     @OneToOne
-    private Teacher teachers;
+    private Teacher teacher;
 
     @Column(nullable = false, updatable = false)
     private final Instant createdIn = Instant.now();
@@ -23,10 +27,22 @@ public class TeacherAvailability extends SchedulingClass {
     private TeacherAvailability() {
     }
 
-    public TeacherAvailability(LocalDate date, String hours, Teacher teachers) {
-        super.date = date;
-        super.hours = hours;
-        this.teachers = teachers;
+    public TeacherAvailability(LocalDate date, String hours, Teacher teacher) {
+        this.date = date;
+        this.hours = hours;
+        this.teacher = teacher;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public String getHours() {
+        return hours;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
     }
 
 }
