@@ -23,7 +23,7 @@ public class Class {
     private TeacherAvailability teacherAvailability;
 
     @OneToOne
-    private StudentScheduling agendamento;
+    private Student student;
 
     @Column(nullable = false, updatable = false)
     private final Instant createdIn = Instant.now();
