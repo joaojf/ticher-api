@@ -15,8 +15,6 @@ public class Student extends Login {
     @Column(nullable = false)
     private String name;
 
-    private String dataNasc;
-
     @Column(nullable = false, updatable = false)
     private final Instant createdIn = Instant.now();
 
