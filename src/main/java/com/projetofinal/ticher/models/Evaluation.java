@@ -23,6 +23,10 @@ public class Evaluation {
     @ManyToOne
     private Teacher teachers;
 
+    @Deprecated
+    private Evaluation() {
+    }
+
     public Evaluation(String title, String description, Integer score, Student students, Teacher teachers) {
         this.title = title;
         this.description = description;
