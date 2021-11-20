@@ -29,6 +29,9 @@ public class ClassRequest {
     public Class toClass(EntityManager entityManager) {
         Student student = entityManager.find(Student.class, idStudent);
         TeacherAvailability teacherAvailability = entityManager.find(TeacherAvailability.class, idTeacherAvailability);
+        if(teacherAvailability.getStatusAvailability() == StatusAvailability.CLOSE){
+            throw new RuntimeException("UNAVAILABLE CLASS!");
+        }
         teacherAvailability.setStatusAvailability(StatusAvailability.CLOSE);
         return new Class(teacherAvailability, student);
     }
