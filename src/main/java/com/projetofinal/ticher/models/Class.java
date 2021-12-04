@@ -27,4 +27,11 @@ public class Class {
         this.student = student;
     }
 
+    public TeacherAvailability getTeacherAvailability() {
+        return teacherAvailability;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
 }

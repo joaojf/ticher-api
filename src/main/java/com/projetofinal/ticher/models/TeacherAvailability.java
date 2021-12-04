@@ -59,6 +59,10 @@ public class TeacherAvailability {
         return statusAvailability;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
     public void setStatusAvailability(StatusAvailability statusAvailability) {
         this.statusAvailability = statusAvailability;
     }

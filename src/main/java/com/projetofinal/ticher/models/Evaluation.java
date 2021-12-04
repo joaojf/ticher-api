@@ -35,4 +35,27 @@ public class Evaluation {
         this.teachers = teachers;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public Student getStudents() {
+        return students;
+    }
+
+    public Teacher getTeachers() {
+        return teachers;
+    }
 }
