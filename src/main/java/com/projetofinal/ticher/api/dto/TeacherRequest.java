@@ -3,12 +3,10 @@ package com.projetofinal.ticher.api.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.projetofinal.ticher.models.Subject;
 import com.projetofinal.ticher.models.Teacher;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.EntityManager;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +26,13 @@ public class TeacherRequest {
     private final String password;
 
     private final List<Long> subjectIds;
+
+    @CPF
+    @NotBlank
     private final String cpf;
+
+    @Pattern(regexp = "^\\([0-9]{2}\\)[0-9]{5}-[0-9]{4}$", message = "malformed number! expected: (xx)xxxxx-xxxx")
+    @NotBlank
     private final String numberPhone;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
