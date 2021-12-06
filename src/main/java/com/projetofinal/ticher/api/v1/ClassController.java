@@ -1,6 +1,6 @@
 package com.projetofinal.ticher.api.v1;
 
-import com.projetofinal.ticher.api.dto.KlassResponse;
+import com.projetofinal.ticher.api.dto.ClassResponse;
 import com.projetofinal.ticher.config.exceptions.CustomException;
 import com.projetofinal.ticher.models.Class;
 import com.projetofinal.ticher.repositories.ClassRepository;
@@ -29,7 +29,7 @@ public class ClassController {
     @Transactional
     private ResponseEntity<?> findById(@PathVariable Long id) {
         Class klass = classRepository.findById(id).orElseThrow(() -> new CustomException("Class not found!", HttpStatus.NOT_FOUND));
-        return ResponseEntity.ok().body(new KlassResponse(klass));
+        return ResponseEntity.ok().body(new ClassResponse(klass));
     }
 
 }

@@ -27,4 +27,5 @@ public class TeacherDiponibilityResponse {
     public Double getPrice() {
         return price;
     }
+
 }

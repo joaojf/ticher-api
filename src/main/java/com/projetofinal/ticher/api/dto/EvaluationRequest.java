@@ -37,4 +37,5 @@ public class EvaluationRequest {
         Teacher teacher = entityManager.find(Teacher.class, teacherId);
         return new Evaluation(this.title, this.description, this.score, student, teacher);
     }
+
 }

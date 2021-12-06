@@ -30,4 +30,5 @@ public class TeacherResponse {
     public List<Subject> getSubjects() {
         return subjects;
     }
+
 }

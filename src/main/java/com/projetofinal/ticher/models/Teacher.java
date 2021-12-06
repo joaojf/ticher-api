@@ -1,6 +1,6 @@
 package com.projetofinal.ticher.models;
 
-import com.projetofinal.ticher.models.abstracts.Login;
+import com.projetofinal.ticher.models.abstracts.Registration;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -8,14 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Teacher extends Login {
+public class Teacher extends Registration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
-    private String name;
 
     @ManyToMany
     @JoinTable(name = "teacher_subjects",
@@ -33,15 +30,13 @@ public class Teacher extends Login {
     private Teacher() {
     }
 
-    public Teacher(String name, List<Subject> subjectsList, String email, String password) {
+    public Teacher(String name, List<Subject> subjectsList, String email, String password, String cpf, String phoneNumber) {
         super.email = email;
         super.password = password;
-        this.name = name;
+        super.name = name;
+        super.cpf = cpf;
+        super.numberPhone = phoneNumber;
         this.subjects = subjectsList;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public List<Subject> getSubjects() {

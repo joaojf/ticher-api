@@ -2,7 +2,7 @@ package com.projetofinal.ticher.api.dto;
 
 import com.projetofinal.ticher.models.Class;
 
-public class KlassResponse {
+public class ClassResponse {
 
     private final String teacher;
 
@@ -16,7 +16,7 @@ public class KlassResponse {
 
     private final String emailStudent;
 
-    public KlassResponse(Class klass) {
+    public ClassResponse(Class klass) {
         this.teacher = klass.getTeacherAvailability().getTeacher().getName();
         this.student = klass.getStudent().getName();
         this.data = klass.getTeacherAvailability().getDate().toString();
@@ -48,4 +48,5 @@ public class KlassResponse {
     public String getEmailStudent() {
         return emailStudent;
     }
+
 }

@@ -27,4 +27,5 @@ public class EvaluationResponse {
     public String getDescription() {
         return description;
     }
+
 }

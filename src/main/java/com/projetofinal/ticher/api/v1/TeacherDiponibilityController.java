@@ -1,9 +1,7 @@
 package com.projetofinal.ticher.api.v1;
 
-import com.projetofinal.ticher.api.dto.SubjectResponse;
 import com.projetofinal.ticher.api.dto.TeacherDiponibilityResponse;
 import com.projetofinal.ticher.config.exceptions.CustomException;
-import com.projetofinal.ticher.models.Subject;
 import com.projetofinal.ticher.models.TeacherAvailability;
 import com.projetofinal.ticher.repositories.TeacherAvailabilityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
